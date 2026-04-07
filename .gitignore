@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.env
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & large artifacts (keep out of Git; document sources in README)
+data/
+*.npz
+*.h5
+*.hdf5
+*.parquet
+*.tdms
+*.tdms_index
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Secrets (even for public projects — no accidents)
+*credentials*.json
+service-account*.json
