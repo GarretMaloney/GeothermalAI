@@ -1,0 +1,10 @@
+# Moraga et al. (2022) pipeline — GDB inventory + GeoTIFF export
+# Windows: use conda-forge so GDAL/Fiona/Rasterio share one ABI:
+#   conda create -n geothermal-gis python=3.11 -y
+#   conda activate geothermal-gis
+#   conda install -c conda-forge geopandas fiona rasterio gdal numpy -y
+
+geopandas>=0.14.0
+fiona>=1.9.0
+rasterio>=1.3.0
+numpy>=1.24.0

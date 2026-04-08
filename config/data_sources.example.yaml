@@ -1,0 +1,23 @@
+# Copy to data_sources.yaml and set paths to your SSD layout.
+# GDR convention (course clarification):
+#   1303 — appendices + geodatabases covering all three study sites (Brady, Desert Peak, Salton Sea)
+#   1304 / 1305 / 1306 — GDR submission IDs used to label or group material per site on the SSD
+#   1307 — programs/code for Geothermal AI (Moraga et al. workflow), separate from the 1304–1306 site labels
+#
+# Below: optional hints for inventory/export commands (fill in real paths).
+
+# Primary: profile folder (Desktop may be entirely under OneDrive on school PCs).
+ssd_root: "C:/Users/gmalo/GIS Final Project"
+
+gdb_bundles:
+  all_sites_1303: "C:/Users/gmalo/GIS Final Project/1303/DOE_GDB"
+
+site_submissions:
+  gdr_1304: "C:/Users/gmalo/GIS Final Project/1304"
+  gdr_1305: "C:/Users/gmalo/GIS Final Project/1305"
+  gdr_1306: "C:/Users/gmalo/GIS Final Project/1306"
+
+sites:
+  brady: { name: "Brady Hot Springs", state: "NV" }
+  desert_peak: { name: "Desert Peak", state: "NV" }
+  salton_sea: { name: "Salton Sea", state: "CA" }

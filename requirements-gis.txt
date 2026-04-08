@@ -1,0 +1,1 @@
+# Superseded by requirements.txt (geopandas + fiona + rasterio + numpy).

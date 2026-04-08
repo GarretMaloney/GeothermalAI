@@ -1,0 +1,4 @@
+# Optional: upload from Python (alternative to gsutil)
+#   pip install -r requirements-gcs.txt
+#   gcloud auth application-default login
+google-cloud-storage>=2.14.0

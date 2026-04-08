@@ -1,0 +1,11 @@
+# Minimal solve (fast). Add geopandas later: conda install -n geothermal-gis -c conda-forge geopandas
+name: geothermal-gis
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - gdal>=3.7
+  - fiona
+  - rasterio
+  - numpy
