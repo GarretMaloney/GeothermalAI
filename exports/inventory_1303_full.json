@@ -1,0 +1,4155 @@
+{
+  "root": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB",
+  "gdb_count": 9,
+  "gdbs": [
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\Bradys.gdb",
+      "gdb_basename": "Bradys.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\Bradys.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\Bradys_Analysis.gdb",
+      "gdb_basename": "Bradys_Analysis.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\Bradys_Analysis.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\Bradys_Pre_Processing.gdb",
+      "gdb_basename": "Bradys_Pre_Processing.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\Bradys_Pre_Processing.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\DesertPeak.gdb",
+      "gdb_basename": "DesertPeak.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\DesertPeak.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\DesertPeak_Analysis.gdb",
+      "gdb_basename": "DesertPeak_Analysis.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\DesertPeak_Analysis.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\DesertPeak_Pre_Processing.gdb",
+      "gdb_basename": "DesertPeak_Pre_Processing.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\DesertPeak_Pre_Processing.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\SaltonSea.gdb",
+      "gdb_basename": "SaltonSea.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\SaltonSea.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\SaltonSea_Analysis.gdb",
+      "gdb_basename": "SaltonSea_Analysis.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\SaltonSea_Analysis.gdb: Permission denied",
+      "rasters": []
+    },
+    {
+      "gdb": "C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\SaltonSea_Pre_Processing.gdb",
+      "gdb_basename": "SaltonSea_Pre_Processing.gdb",
+      "vectors": [
+        {
+          "layer": "TableData",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [],
+          "crs": ""
+        },
+        {
+          "layer": "Geologic",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Geophysics",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Radar",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "SWIR",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "Thermal",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "Wells",
+          "geometry_type": "MultiPolygon",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "Raster",
+            "Name",
+            "Shape_Length",
+            "Shape_Area"
+          ],
+          "crs": "EPSG:4326"
+        },
+        {
+          "layer": "fras_aux_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_aux_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "type",
+            "object"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_blk_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "rasterband_id",
+            "rrd_factor",
+            "row_nbr",
+            "col_nbr",
+            "block_data",
+            "block_key"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_bnd_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "sequence_nbr",
+            "raster_id",
+            "name",
+            "band_flags",
+            "band_width",
+            "band_height",
+            "band_types",
+            "block_width",
+            "block_height",
+            "block_origin_x",
+            "block_origin_y",
+            "eminx",
+            "eminy",
+            "emaxx",
+            "emaxy",
+            "cdate",
+            "mdate",
+            "srid"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geologic",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Geophysics",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Radar",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_SWIR",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Thermal",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        },
+        {
+          "layer": "fras_ras_Wells",
+          "geometry_type": "None",
+          "driver": "OpenFileGDB",
+          "schema_properties": [
+            "raster_flags",
+            "description",
+            "storage_def"
+          ],
+          "crs": ""
+        }
+      ],
+      "gdal_release": "3.12.2",
+      "raster_subdatasets": [],
+      "raster_note": "Raster open skipped: C:\\Users\\gmalo\\GIS Final Project\\1303\\DOE_GDB\\SaltonSea_Pre_Processing.gdb: Permission denied",
+      "rasters": []
+    }
+  ]
+}
