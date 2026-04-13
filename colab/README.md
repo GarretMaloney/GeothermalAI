@@ -31,6 +31,17 @@ Optional: sync whole project folder (1304–1307) by changing the source path.
 
 **Recommended:** open [colab.research.google.com](https://colab.research.google.com/) and **upload** `colab_gdb_from_gcs.ipynb` (most reliable). The VS Code / Cursor Colab extension can hit websocket/widget issues — see **`colab/TROUBLESHOOTING_VSCODE_COLAB.md`**.
 
+### Run 1307 AI code from GCS (new notebook)
+
+Use **`colab/colab_1307_from_gcs.ipynb`** when you want Colab (Google GPU) to execute the 1307 AI code stored in your bucket.
+
+1. In Colab, open **GitHub** and select this repo, then choose `colab/colab_1307_from_gcs.ipynb`.
+2. Set `GCP_PROJECT`, `GCS_BUCKET`, and (if needed) `GCS_PREFIX_1307` in the config cell.
+3. Set `ENTRY_SCRIPT` and optional `ENTRY_ARGS` for your 1307 program.
+4. Run cells top-to-bottom: auth -> sync -> install -> GPU check -> run.
+
+The notebook syncs `gs://<bucket>/<prefix>` into `/content/1307` with `gsutil -m rsync -r`, then runs your script with the active Colab Python interpreter.
+
 ### Workflow: Git + GCS (default in the notebook)
 
 - **Code (`scripts/`):** Colab **clones or pulls** your GitHub repo (default `https://github.com/GarretMaloney/GeothermalAI.git`, branch `main`). Push from any computer; re-run the clone cell in Colab to pick up changes.
