@@ -1,0 +1,225 @@
+source("DOE_Utilities.R")
+
+#### K-Means for temperature (no distance adjustment)
+kmeans_tmp <-
+  function(pt_lst_16,
+           img_name,
+           n_clusters = 5,
+           plot_image = FALSE) {
+    pt_tmp_dst <- pt_lst_16[, c(img_name)]
+    k_tmp_dst_pt <- pt_lst_16[, c("x", "y")]
+    df1 <- na.omit(df[, c("x", "y", img_name)])
+    pt_tmp_dst <- df1[, 3]
+    k_tmp_dst_pt <- df1[, c("x", "y")]
+    pt_tmp_dst <- (pt_tmp_dst - mean(pt_tmp_dst)) / (sd(pt_tmp_dst))
+    k_tmp_dst <-
+      stats::kmeans(pt_tmp_dst, n_clusters, iter.max = 2000)
+    cluster_lst <- as.data.frame(k_tmp_dst$centers)
+    cluster_lst$cluster <- seq(1, length(k_tmp_dst$centers))
+    colnames(cluster_lst) <- c("temp", "cluster")
+    sorted_clusters <- cluster_lst[order(cluster_lst[, 1]),]
+    k_tmp_dst$cluster <-
+      match(unlist(k_tmp_dst$cluster), sorted_clusters[, 2])
+    k_tmp_dst$centers <- unlist(sorted_clusters$temp)
+    k_tmp_dst$coord <- k_tmp_dst_pt
+    if (plot_image) {
+      k_tmp_dst_pt[, 3] <- k_tmp_dst$cluster
+      sp::coordinates(k_tmp_dst_pt) <- ~ x + y
+      sp::proj4string(k_tmp_dst_pt) <-
+        crs("+init=epsg:32611")
+      sp::gridded(k_tmp_dst_pt) <- TRUE
+      plot(k_tmp_dst_pt, col = rev(rainbow(n_clusters)), main = img_name)
+    }
+    return(k_tmp_dst)
+  }
+
+
+#### K-means using temperature & distance
+kmeans_dst <-
+  function(pt_lst_16,
+           img_name,
+           n_clusters = 5,
+           plot_image = FALSE) {
+    pt_tmp_dst <- pt_lst_16[, c("x", "y", img_name)]
+    k_tmp_dst_pt <- pt_tmp_dst
+    pt_tmp_dst["x"] <-
+      (pt_tmp_dst["x"] - mean(pt_tmp_dst[, "x"])) / (sd(pt_tmp_dst[, "x"]))
+    pt_tmp_dst["y"] <-
+      (pt_tmp_dst["y"] - mean(pt_tmp_dst[, "y"])) / (sd(pt_tmp_dst[, "y"]))
+    pt_tmp_dst[3] <-
+      (pt_tmp_dst[3] - mean(pt_tmp_dst[, 3])) / (sd(pt_tmp_dst[, 3]))
+    k_tmp_dst <-
+      stats::kmeans(pt_tmp_dst, n_clusters, iter.max = 2000)
+    if (plot_image) {
+      k_tmp_dst_pt[, 3] <- k_tmp_dst$cluster
+      sp::coordinates(k_tmp_dst_pt) <- ~ x + y
+      sp::proj4string(k_tmp_dst_pt) <-
+        crs("+init=epsg:32611")
+      sp::gridded(k_tmp_dst_pt) <- TRUE
+      plot(k_tmp_dst_pt, col = rev(rainbow(n_clusters)))
+    }
+    return(k_tmp_dst)
+  }
+
+# Read all Landsat-8 LST files from data directory
+data_directory <-
+  "../Data/LST/BradyandDesert/Landsat2/ST"
+lst_file_names <- list.files(
+  data_directory,
+  pattern = "([:alnum:]|_)*_ST[.]tif",
+  recursive = TRUE,
+  full.names = TRUE
+)
+lst_file_names <- lst_file_names[grep("tif$", lst_file_names)]
+lst_list <- vector(mode = "list", length = 0)
+
+# Landsat-8 LST files use Albers projection in meters
+# Resolution is 30 by 30 mts
+extent_hymap_lst <-
+  raster::raster(
+    xmn = 325209,
+    xmx = 336531,
+    ymn = 4395438,
+    ymx = 4412103,
+    res = c(30, 30),
+    crs = "+init=epsg:32611"
+  )
+for (a_file in lst_file_names) {
+  n <- paste0("x", substr(basename(a_file), 16, 23))
+  r <- raster::raster(a_file)
+  r <- raster::projectRaster(r, extent_hymap_lst)
+  n <- substr(basename(a_file), 16, 23)
+  n <- as.Date(n, format = "%Y%m%d")
+  raster_name <- paste("LST", n, sep = "_")
+  raster::names(r) <- raster_name
+  lst_list[raster_name] <- r
+}
+all_lst <- raster::stack(unlist(lst_list))
+names(all_lst)
+rm(lst_list)
+
+all_lst <-
+  raster::projectRaster(all_lst, extent_hymap_lst, res = res(all_lst))
+
+########## START # Doing the same but for QA files ###
+data_directory <-
+  "../Data/LST/BradyandDesert/Landsat2/STQA"
+lst_file_names <- list.files(
+  data_directory,
+  pattern = "([:alnum:]|_)*_PIXELQA[.]tif",
+  recursive = TRUE,
+  full.names = TRUE
+)
+lst_file_names <- lst_file_names[grep("tif$", lst_file_names)]
+lst_list <- vector(mode = "list", length = 0)
+
+# Landsat-8 LST files use Albers projection in meters
+# Resolution is 30 by 30 mts
+extent_hymap_lst <-
+  raster::raster(
+    xmn = 325209,
+    xmx = 336531,
+    ymn = 4395438,
+    ymx = 4412103,
+    res = c(30, 30),
+    crs = "+init=epsg:32611"
+  )
+for (a_file in lst_file_names) {
+  n <- paste0("x", substr(basename(a_file), 16, 23))
+  r <- raster::raster(a_file)
+  r <- raster::projectRaster(r, extent_hymap_lst)
+  n <- substr(basename(a_file), 16, 23)
+  n <- as.Date(n, format = "%Y%m%d")
+  raster_name <- paste("LST", n, sep = "_")
+  raster::names(r) <- raster_name
+  lst_list[raster_name] <- r
+}
+
+qa_stack <- raster::stack(unlist(lst_list))
+
+########## END # Doing the same but for QA files ###
+
+clean_stack <- raster::stack(all_lst)
+clean_stack[qa_stack > 325] <- NA
+n_cells <- clean_stack@nrows * clean_stack@ncols
+
+s <- summary(clean_stack)
+na_cells <- (s["NA's",]) / n_cells
+valid_cells <- raster::names(clean_stack)[(na_cells < 0.5)]
+clean_stack <- clean_stack[[valid_cells]]
+plot(clean_stack[[1:6]])
+print("Delete from stack the anomalous remaining layers")
+anomalous <- c("LST_2018.09.07")
+clean_stack <- dropLayer(clean_stack, anomalous)
+plot(clean_stack)
+
+doe_writeRaster(clean_stack, "valid_lst_stack")
+
+new_filename <- "valid_lst_stack_tif.tif"
+f1 <-
+  writeRaster(clean_stack,
+              new_filename,
+              format = "GTiff",
+              overwrite = TRUE)
+hdr(f1, format = "ENVI")
+rm(qa_stack, all_lst, lst_list)
+
+###### Conversions from LST to Celsius
+### LST file to Kelvin : K = LST/10
+### Kelvin to Celsius  : C = K - 273.15
+valid_lst_stack <- raster::stack("valid_lst_stack.gri")
+
+
+valid_lst_stack <- valid_lst_stack / 10.0 - 273.15
+###
+raster::spplot(valid_lst_stack[[12:15]])
+df_coord <- sp::coordinates(valid_lst_stack)
+df <- as.data.frame(valid_lst_stack)
+df <- cbind(df_coord, df)
+img_names <- raster::names(valid_lst_stack)
+
+k_means_list <- vector(mode = "list", length = 0)
+for (img in img_names) {
+  k <- kmeans_tmp(df, img, plot_image = FALSE)
+  k_df <- as.data.frame(cbind(k$coord, k$cluster))
+  colnames(k_df) <- c("x", "y", img)
+  d1 <-
+    raster::rasterFromXYZ(k_df,
+                          res = c(30, 30),
+                          crs = "+init=epsg:32611")
+  d1 <- raster::projectRaster(d1, extent_hymap_lst)
+  k_means_list[img] <- d1
+}
+k_means_stack <- raster::stack(unlist(k_means_list))
+
+f1 <- doe_writeRaster(k_means_stack, "LST_kmeans_stack")
+rm(df, k, k_df, d1)
+
+kmeans_stack <- raster::brick("LST_kmeans_stack.gri")
+
+k_df <- raster::rasterToPoints(kmeans_stack)
+
+rm(k_means_list, kmeans_stack)
+k_df[is.na(k_df)] <- 0
+summary_df <- as.data.frame(k_df[, 1:2])
+k_df <- as.data.frame(k_df[, 3:(ncol(k_df))])
+
+summary_df$na_count <- rowSums((k_df == 0))
+summary_df$hottest <- rowSums(k_df == 5, na.rm = TRUE)
+summary_df$hot <- rowSums(k_df == 4, na.rm = TRUE)
+summary_df$normal <- rowSums(k_df == 3, na.rm = TRUE)
+summary_df$cold <- rowSums(k_df == 2, na.rm = TRUE)
+summary_df$coldest <- rowSums(k_df == 1, na.rm = TRUE)
+summary_df$valid <- rowSums(k_df >= 1, na.rm = TRUE)
+rm(k_df)
+summary_df$probability <- (summary_df$hottest + summary_df$hot * .5
+                           - summary_df$coldest) / summary_df$valid
+summary_df$probability <- (summary_df$hottest) / summary_df$valid
+sp_df <-
+  coords2spatialdf(summary_df[c("x", "y")],
+                   as.data.frame(summary_df$probability))
+r <- raster::rasterize(sp_df, extent_hymap_lst)
+r <- r[[2]]
+names(r) <- "LST_prob"
+doe_writeRaster(r, "kmeans_weighted")
+raster::spplot(r, main = "SP plot cluster 5 prob")
