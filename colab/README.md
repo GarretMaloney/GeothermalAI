@@ -31,22 +31,25 @@ Optional: sync whole project folder (1304–1307) by changing the source path.
 
 **Recommended:** open [colab.research.google.com](https://colab.research.google.com/) and **upload** `colab_gdb_from_gcs.ipynb` (most reliable). The VS Code / Cursor Colab extension can hit websocket/widget issues — see **`colab/TROUBLESHOOTING_VSCODE_COLAB.md`**.
 
-### Run 1307 AI code from GCS (new notebook)
+### Run 1307 Geothermal AI: Git for code, GCS for data (`colab_1307_from_gcs.ipynb`)
 
-Use **`colab/colab_1307_from_gcs.ipynb`** when you want Colab (Google GPU) to execute the 1307 AI code stored in your bucket.
+Use **`colab/colab_1307_from_gcs.ipynb`** for Colab GPU runs.
 
-1. In Colab, open **GitHub** and select this repo, then choose `colab/colab_1307_from_gcs.ipynb`.
-2. Set `GCP_PROJECT`, `GCS_BUCKET`, and (if needed) `GCS_PREFIX_1307` in the config cell.
-3. Set `ENTRY_SCRIPT` and optional `ENTRY_ARGS` for your 1307 program.
-4. Run cells top-to-bottom: auth -> sync -> install -> GPU check -> run.
+1. Open `colab/colab_1307_from_gcs.ipynb` (from this repo in Colab or upload the file).
+2. In the config cell, set `GCP_PROJECT`, `GCS_BUCKET`, and (for rasters) `GCS_EXTRA_SYNC_PREFIXES`.
+3. **Default:** `USE_GIT_FOR_CODE = True` — Colab **clones or pulls** `https://github.com/GarretMaloney/GeothermalAI.git` (branch `main`) to `/content/GeothermalAI` and runs scripts under **`Git_1307/`** (`doe_geoai.py`, `create_doe_dataset.py`, etc.). Change `GIT_REPO_URL` if you use a fork.
+4. **Data** (Brady SOM, future Desert Peak / Salton paths): still **`gsutil rsync`** from your bucket into `/content/...` via `GCS_EXTRA_SYNC_PREFIXES`. Run outputs and tile `.tar.gz` datasets use the existing `GCS_OUTPUT_PREFIX` / `GCS_DATASET_PREFIX` flow.
+5. **Legacy option:** set `USE_GIT_FOR_CODE = False` to **rsync 1307 code from GCS** into `/content/1307` (older course layout), with no Git clone.
+6. Run cells in order: auth + clone/sync + data → inspect → `pip` → GPU check → run directory → **section 7** entry script.
 
-The notebook syncs `gs://<bucket>/<prefix>` into `/content/1307` with `gsutil -m rsync -r`, then runs your script with the active Colab Python interpreter.
+`requirements.txt` is taken from `Git_1307/` if present, otherwise from the **repo root** `requirements.txt`.
 
-### Workflow: Git + GCS (default in the notebook)
+**Private GitHub:** use a [personal access token](https://github.com/settings/tokens) in `GIT_REPO_URL` (`https://<token>@github.com/user/repo.git`) or Colab secrets; do not commit tokens.
 
-- **Code (`scripts/`):** Colab **clones or pulls** your GitHub repo (default `https://github.com/GarretMaloney/GeothermalAI.git`, branch `main`). Push from any computer; re-run the clone cell in Colab to pick up changes.
-- **Data:** **`gsutil rsync`** from your bucket into `/content/...` (prefixes with spaces are handled via `subprocess`, not shell `!` magic).
-- **Drive mount** in the notebook is **optional** — only if you keep scripts on Drive instead of Git.
+### Workflow: Git (code) + GCS (data)
+
+- **Code:** `Git_1307/` in this repo, updated via `git push`; Colab re-runs section 2 to `git pull`.
+- **Data & artifacts:** GCS (sync prefixes + outputs).
 
 **Private GitHub repo:** set `GIT_REPO_URL` to `https://<TOKEN>@github.com/USER/REPO.git`, or store the token in Colab **Secrets** and build the URL in the config cell (avoid committing tokens).
 
