@@ -442,7 +442,7 @@ if __name__ == '__main__':
     print(classification_report(testY, pre_y2))
     # Calculate ROC Curves if required
     if output_curves_file is not None:
-        ROC_curve_calc( testY, pre_y2, class_num = 8, output_file_header = output_curves_file)
+        ROC_curve_calc( testY, pre_y2, class_num = int(pre_y2_prob.shape[1]), output_file_header = output_curves_file)
     if (not validate_only):
         # plot the training loss and accuracy
         plt.style.use("ggplot")
