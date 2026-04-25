@@ -37,6 +37,7 @@ import os.path as path
 import sys
 import pickle
 import random
+import json
 import skimage
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
@@ -432,14 +433,48 @@ if __name__ == '__main__':
     pre_y2_prob = pre_y2
     pre_y2 = pre_y2.argmax(axis=-1)
     acc2 = accuracy_score(testY, pre_y2)
+    cm = confusion_matrix(testY, pre_y2)
+    report_text = classification_report(testY, pre_y2)
+    report_dict = classification_report(testY, pre_y2, output_dict=True)
     print("test set:", testY[:10])
     print("pred set:", pre_y2[:10])
     print('Accuracy on test set: {0:.3f}'.format(acc2))
     print("Confusion Matrix:")
-    print(confusion_matrix(testY, pre_y2))
+    print(cm)
     print()
     print("Classification Report")
-    print(classification_report(testY, pre_y2))
+    print(report_text)
+    metrics_prefix = output_curves_file or model_file
+    metrics_dir = path.dirname(metrics_prefix)
+    if metrics_dir:
+        os.makedirs(metrics_dir, exist_ok=True)
+    metrics_json = metrics_prefix + ".metrics.json"
+    report_file = metrics_prefix + ".classification_report.txt"
+    metrics = {
+        "accuracy": float(acc2),
+        "confusion_matrix": cm.tolist(),
+        "classification_report": report_dict,
+        "dataset_path": dataset_path,
+        "model_file": model_file,
+        "validate_only": bool(validate_only),
+        "num_epochs": int(num_epochs),
+        "batch_size": int(batch_size),
+        "kernel_pixels": int(kernel_pixels),
+        "image_channels": int(image_channels),
+        "num_classes": int(num_classes),
+        "test_samples": int(len(testY)),
+        "predicted_probability_shape": list(pre_y2_prob.shape),
+    }
+    with open(metrics_json, "w") as f:
+        json.dump(metrics, f, indent=2, sort_keys=True)
+    with open(report_file, "w") as f:
+        f.write("Accuracy on test set: {0:.6f}\n\n".format(acc2))
+        f.write("Confusion Matrix:\n")
+        f.write(np.array2string(cm))
+        f.write("\n\nClassification Report\n")
+        f.write(report_text)
+    print("[INFO] wrote metrics:", metrics_json)
+    print("[INFO] wrote classification report:", report_file)
     # Calculate ROC Curves if required
     if output_curves_file is not None:
         ROC_curve_calc( testY, pre_y2, class_num = int(pre_y2_prob.shape[1]), output_file_header = output_curves_file)
