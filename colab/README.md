@@ -36,11 +36,10 @@ Optional: sync whole project folder (1304–1307) by changing the source path.
 Use **`colab/colab_1307_from_gcs.ipynb`** for Colab GPU runs.
 
 1. Open `colab/colab_1307_from_gcs.ipynb` (from this repo in Colab or upload the file).
-2. In the config cell, set `GCP_PROJECT`, `GCS_BUCKET`, and (for rasters) `GCS_EXTRA_SYNC_PREFIXES`.
-3. **Default:** `USE_GIT_FOR_CODE = True` — Colab **clones or pulls** `https://github.com/GarretMaloney/GeothermalAI.git` (branch `main`) to `/content/GeothermalAI` and runs scripts under **`Git_1307/`** (`doe_geoai.py`, `create_doe_dataset.py`, etc.). Change `GIT_REPO_URL` if you use a fork.
-4. **Data** (Brady SOM, future Desert Peak / Salton paths): still **`gsutil rsync`** from your bucket into `/content/...` via `GCS_EXTRA_SYNC_PREFIXES`. Run outputs and tile `.tar.gz` datasets use the existing `GCS_OUTPUT_PREFIX` / `GCS_DATASET_PREFIX` flow.
-5. **Legacy option:** set `USE_GIT_FOR_CODE = False` to **rsync 1307 code from GCS** into `/content/1307` (older course layout), with no Git clone.
-6. Run cells in order: auth + clone/sync + data → inspect → `pip` → GPU check → run directory → **section 7** entry script.
+2. In the config cell, set `GCP_PROJECT`, `GCS_BUCKET`, `GIT_REPO_URL` / `GIT_BRANCH` (fork if needed), and `GCS_EXTRA_SYNC_PREFIXES` for rasters.
+3. Colab **clones or pulls** the repo into `/content/GeothermalAI` and runs scripts under **`Git_1307/`** (`doe_geoai.py`, `create_doe_dataset.py`, etc.). Training code is always taken from GitHub, not from GCS.
+4. Large **data** (e.g. Brady SOM): `gsutil rsync` from your bucket into `/content/...` via `GCS_EXTRA_SYNC_PREFIXES`. **Tile archives** for training can be uploaded as a single `.tar.gz` to `GCS_DATASET_PREFIX` when `create_doe_dataset.py` finishes with `SYNC_DATASET_TO_GCS` enabled. **Run folders** under `/content/1307_runs/...` are local unless you copy them with `gsutil` or the console (see the “After §7” cell in the notebook).
+5. Run cells **in order**: authenticate + Git + data sync → inspect **`Git_1307`** → install dependencies → GPU check → run folder → prep before §7 → §7 entry script → copy outputs off the VM as needed.
 
 `requirements.txt` is taken from `Git_1307/` if present, otherwise from the **repo root** `requirements.txt`.
 
