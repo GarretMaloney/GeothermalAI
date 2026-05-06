@@ -31,11 +31,11 @@ Optional: sync whole project folder (1304–1307) by changing the source path.
 
 **Recommended:** open [colab.research.google.com](https://colab.research.google.com/) and **upload** `colab_gdb_from_gcs.ipynb` (most reliable). The VS Code / Cursor Colab extension can hit websocket/widget issues — see **`colab/TROUBLESHOOTING_VSCODE_COLAB.md`**.
 
-### Run 1307 Geothermal AI: Git for code, GCS for data (`colab_1307_from_gcs.ipynb`)
+### Run 1307 Geothermal AI: Git for code, GCS for data (`colab_1307_git_gcs.ipynb`)
 
-Use **`colab/colab_1307_from_gcs.ipynb`** for Colab GPU runs.
+Use **`colab/colab_1307_git_gcs.ipynb`** for Colab GPU runs.
 
-1. Open `colab/colab_1307_from_gcs.ipynb` (from this repo in Colab or upload the file).
+1. Open `colab/colab_1307_git_gcs.ipynb` (from this repo in Colab or upload the file).
 2. In the config cell, set `GCP_PROJECT`, `GCS_BUCKET`, `GIT_REPO_URL` / `GIT_BRANCH` (fork if needed), and `GCS_EXTRA_SYNC_PREFIXES` for rasters.
 3. Colab **clones or pulls** the repo into `/content/GeothermalAI` and runs scripts under **`Git_1307/`** (`doe_geoai.py`, `create_doe_dataset.py`, etc.). Training code is always taken from GitHub, not from GCS.
 4. Large **data** (e.g. Brady SOM): `gsutil rsync` from your bucket into `/content/...` via `GCS_EXTRA_SYNC_PREFIXES`. **Tile archives** for training can be uploaded as a single `.tar.gz` to `GCS_DATASET_PREFIX` when `create_doe_dataset.py` finishes with `SYNC_DATASET_TO_GCS` enabled. **Run folders** under `/content/1307_runs/...` are local unless you copy them with `gsutil` or the console (see the “After §7” cell in the notebook).

@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-p = Path(__file__).with_name("colab_1307_from_gcs.ipynb")
+p = Path(__file__).with_name("colab_1307_git_gcs.ipynb")
 nb = json.loads(p.read_text(encoding="utf-8"))
 
 
