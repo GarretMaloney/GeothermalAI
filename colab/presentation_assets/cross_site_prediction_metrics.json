@@ -1,5 +1,42 @@
 {
   "description": "Tile-level validation metrics for the two cross-site prediction figures (Brady ↔ Desert Peak). 19×19 kernels, 5 channels, 100 epochs.",
+  "paper": {
+    "citation": "Moraga, J., Duzgun, H.S., Cavur, M., et al., The Geothermal Artificial Intelligence for geothermal exploration, Renewable Energy 192 (2022) 134-149",
+    "doi": "https://doi.org/10.1016/j.renene.2022.04.113",
+    "table2_same_site": {
+      "brady": {
+        "accuracy_percent": 95.5,
+        "non_geothermal_precision_percent": 95,
+        "non_geothermal_recall_percent": 96,
+        "geothermal_precision_percent": 96,
+        "geothermal_recall_percent": 95
+      },
+      "desert_peak": {
+        "accuracy_percent": 92.3,
+        "non_geothermal_precision_percent": 91,
+        "non_geothermal_recall_percent": 94,
+        "geothermal_precision_percent": 94,
+        "geothermal_recall_percent": 91
+      }
+    },
+    "table3_cross_site": {
+      "brady_model_applied_to_desert_peak": {
+        "accuracy_percent": 72.4,
+        "non_geothermal_precision_percent": 66,
+        "non_geothermal_recall_percent": 97,
+        "geothermal_precision_percent": 94,
+        "geothermal_recall_percent": 46
+      },
+      "desert_peak_model_applied_to_brady": {
+        "accuracy_percent": 76.3,
+        "non_geothermal_precision_percent": 72,
+        "non_geothermal_recall_percent": 79,
+        "geothermal_precision_percent": 81,
+        "geothermal_recall_percent": 74
+      }
+    },
+    "note": "Paper reports 19x19x3 input in the discussion; this replication uses 5 channels. Table 3 is full-site independent test; replication uses 120k held-out tiles."
+  },
   "common": {
     "kernel_pixels": 19,
     "image_channels": 5,
@@ -27,6 +64,10 @@
       "0": 0.7760885053299458,
       "1": 0.6347869937950843
     },
+    "per_class_precision_recall": {
+      "0": {"precision": 0.6508246062969936, "recall": 0.9610640387528507},
+      "1": {"precision": 0.9252500719056598, "recall": 0.48312113070902934}
+    },
     "confusion_matrix": [[57734, 2339], [30975, 28952]]
   },
   "desert_peak_model_to_brady_tiles": {
@@ -47,6 +88,10 @@
     "per_class_f1": {
       "0": 0.6539859845091943,
       "1": 0.7737155852658419
+    },
+    "per_class_precision_recall": {
+      "0": {"precision": 0.8911033254838895, "recall": 0.5165382118422586},
+      "1": {"precision": 0.6590316748456174, "recall": 0.936723012999149}
     },
     "confusion_matrix": [[31030, 29043], [3792, 56135]]
   },

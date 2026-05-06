@@ -2,6 +2,8 @@
 
 Tile-level CNN metrics from `doe_geoai.py` **validation** (`-v`): trained model from one site, **test tiles from the other** (19×19×**5** channels, 120k samples per run). **100 training epochs** per model (`*_19x5d_100ep` runs). Figures below match these evaluations.
 
+**Paper reference (comparison tables):** Moraga, J., Duzgun, H.S., Cavur, M., *et al.*, *The Geothermal Artificial Intelligence for geothermal exploration*, **Renewable Energy** 192 (2022) 134–149. [doi:10.1016/j.renene.2022.04.113](https://doi.org/10.1016/j.renene.2022.04.113). Values below are transcribed from the paper’s **Table 2** (train/test on the same site) and **Table 3** (independent cross-site test, no training pixels from the evaluated site).
+
 ---
 
 ## Brady-trained model → Desert Peak tiles
@@ -14,7 +16,29 @@ Tile-level CNN metrics from `doe_geoai.py` **validation** (`-v`): trained model 
 
 ---
 
-## Evaluation summary
+## Paper vs this replication (cross-site, Table 3)
+
+Independent test: model trained at one site, evaluated on **all** points/tiles at the other site (paper Table 3). Class **0 = non-geothermal**, **1 = geothermal** (matches sklearn `classification_report` in our runs).
+
+| Direction | Source | Accuracy | Non-geo precision | Non-geo recall | Geothermal precision | Geothermal recall |
+|-----------|--------|----------|---------------------|----------------|----------------------|-------------------|
+| Brady → Desert Peak | **Paper (Table 3)** | **72.4%** | 66% | 97% | 94% | 46% |
+| Brady → Desert Peak | **This repo** (19×5, 100 ep) | **72.24%** | 65.1% | 96.1% | 92.5% | 48.3% |
+| Desert Peak → Brady | **Paper (Table 3)** | **76.3%** | 72% | 79% | 81% | 74% |
+| Desert Peak → Brady | **This repo** (19×5, 100 ep) | **72.64%** | 89.1% | 51.7% | 65.9% | 93.7% |
+
+**Note:** Overall **accuracy** is directly comparable in spirit; **per-class precision/recall** can shift with a different sample tally (paper uses full-site grids; we use 120k labeled tiles), label harmonization, and **5-channel** stacks vs the paper’s **3-channel** 19×19 description. The Brady→Desert Peak row is very close to the published headline **72.4%**. The Desert Peak→Brady direction is **lower accuracy** here but with a different precision–recall tradeoff—worth discussing in a write-up rather than over-interpreting pointwise.
+
+### Paper Table 2 — same-site performance (context)
+
+| Model (trained & tested) | Accuracy | Non-geo P/R | Geothermal P/R |
+|--------------------------|----------|-------------|----------------|
+| Brady | **95.5%** | 95% / 96% | 96% / 95% |
+| Desert Peak | **92.3%** | 91% / 94% | 94% / 91% |
+
+---
+
+## This replication — full tile validation summary
 
 | Direction | Model (trained site) | Test tile set | Samples | Accuracy | Macro F1 | Weighted F1 | Macro precision | Macro recall |
 |-----------|----------------------|---------------|---------|----------|-----------|-------------|-----------------|--------------|
