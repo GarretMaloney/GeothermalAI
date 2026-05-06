@@ -1,0 +1,54 @@
+{
+  "description": "Tile-level validation metrics for the two cross-site figures (Brady ↔ Desert Peak rasters).",
+  "common": {
+    "kernel_pixels": 19,
+    "image_channels": 3,
+    "num_epochs": 25,
+    "batch_size": 32,
+    "validate_only": true,
+    "test_samples": 120000
+  },
+  "brady_model_to_desert_peak_tiles": {
+    "run_folder": "metrics_brady_on_desertpeak",
+    "model_file": "/content/models/brady/doe_geoai_model.h5",
+    "dataset_path": "/content/doe-data/desertpeak_samples_19x3d",
+    "accuracy": 0.71915,
+    "classification_report_macro_avg": {
+      "precision": 0.7890767211017977,
+      "recall": 0.7188504865984009,
+      "f1-score": 0.7008944828501685
+    },
+    "classification_report_weighted_avg": {
+      "precision": 0.7889041092382588,
+      "recall": 0.71915,
+      "f1-score": 0.7009843872387496
+    },
+    "per_class_f1": {
+      "0": 0.7747885008620344,
+      "1": 0.6270004648383026
+    },
+    "confusion_matrix": [[57972, 2101], [31601, 28326]]
+  },
+  "desert_peak_model_to_brady_tiles": {
+    "run_folder": "metrics_desertpeak_on_brady",
+    "model_file": "/content/models/desertpeak/doe_geoai_model.h5",
+    "dataset_path": "/content/doe-data/brady_samples_19x3d",
+    "accuracy": 0.7444916666666667,
+    "classification_report_macro_avg": {
+      "precision": 0.7448712470813157,
+      "recall": 0.7444673099350818,
+      "f1-score": 0.7443797418987931
+    },
+    "classification_report_weighted_avg": {
+      "precision": 0.7448598814659468,
+      "recall": 0.7444916666666667,
+      "f1-score": 0.744386249671039
+    },
+    "per_class_f1": {
+      "0": 0.7497285957995609,
+      "1": 0.7390308879980253
+    },
+    "confusion_matrix": [[45925, 14148], [16513, 43414]]
+  },
+  "provenance": "Copied from local experiment bundle: all_runs/metrics_brady_on_desertpeak/metrics.json and all_runs/metrics_desertpeak_on_brady/metrics.json (2026-04 Colab runs)."
+}
