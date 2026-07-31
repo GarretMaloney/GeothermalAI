@@ -99,16 +99,6 @@ Desert Peak–trained model on Brady:
 
 ![Desert Peak model → Brady prediction](colab/presentation_assets/prediction-raster-figures_desert_peak_model_to_brady.png)
 
-## Shortcomings
-
-**Data volume.** Hundreds of gigabytes of source data forced a cloud-first design. Full models and tile archives remain in GCS; only lightweight metrics and plots are in git.
-
-**Protocol mismatch.** Five-channel stacks and tile-based validation are not identical to the paper’s three-channel, full-site independent tests, which limits how tightly cross-site scores can be compared.
-
-**Salton Sea.** Extension runs were not held to the same fidelity bar as Brady ↔ Desert Peak and should not be read as a completed cross-province replication.
-
-**Upstream stack construction.** The wrapper assumes prepared multi-band stacks and 1307 scripts already exist. Rebuilding indicators and SOM labels from raw satellite products end-to-end was outside the scope of what was automated here.
-
 ## Repository
 
 | Path | Contents |
