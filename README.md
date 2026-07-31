@@ -1,48 +1,170 @@
 # GeothermalAI
 
-GIS programming final project: replicate the **Moraga et al. (2022)** Geothermal AI training / evaluation workflow in Python, using DOE Geothermal Data Repository (GDR) materials and remotely sensed inputs (mineral markers, LST, faults, deformation, etc.).
+Replication of the **Moraga et al. (2022)** Geothermal AI workflow for binary geothermal prospectivity classification, run end-to-end in the cloud with a Colab orchestration wrapper around the DOE GDR **1307** scripts.
 
-## GDR layout (how your SSD fits together)
+**Paper:** Moraga, J., Duzgun, H.S., Cavur, M., *et al.*, *The Geothermal Artificial Intelligence for geothermal exploration*, *Renewable Energy* 192 (2022) 134–149. [doi:10.1016/j.renene.2022.04.113](https://doi.org/10.1016/j.renene.2022.04.113)
+
+**Sites:** Brady Hot Springs · Desert Peak · Salton Sea (extension)
+
+---
+
+## The Moraga pipeline
+
+The published workflow treats geothermal exploration as a **supervised patch classification** problem. Aligned geoscience / remote-sensing layers are stacked into a multi-band raster; a CNN learns to label each location as geothermal vs non-geothermal from a fixed-size neighborhood.
+
+```text
+SOM / feature stack (.gri)
+        │
+        ▼
+  create_doe_dataset.py     →  random 19×19 tiles (.npy) + labels
+        │
+        ▼
+  doe_geoai.py              →  train CNN (.h5) or validate (-v)
+        │
+        ▼
+  doe_ann_map.py            →  full-site prediction raster
+```
+
+| Stage | Script (`Git_1307/`) | Role |
+|-------|----------------------|------|
+| **1. Stack** | Site geodatabases + SOM preprocessing | Band 1 = label mask; bands 2+ = features (mineral markers, LST, faults, deformation, …) |
+| **2. Sample** | `create_doe_dataset.py` | Draw balanced tiles (kernel **19×19**, **3** or **5** channels) |
+| **3. Train / eval** | `doe_geoai.py` | CNN with optional augmentation (`-a`); validate-only with `-v` |
+| **4. Map** | `doe_ann_map.py` | Slide the trained model across the full stack for a spatial prediction |
+
+Those scripts are the original DOE / Moraga **1307** programs (Python, plus R/shell helpers). This repo keeps them under [`Git_1307/`](Git_1307/) and focuses engineering effort on making them reproducible in the cloud.
+
+### DOE GDR submissions
 
 | Submission | Role |
 |------------|------|
-| **1303** | Appendices + **geodatabases for all three sites** (Brady, Desert Peak, Salton Sea) in one bundle — this is the main spatial data drop you already have. |
-| **1304 / 1305 / 1306** | Repository **labels** used to identify or group content **per site** (you have these on disk alongside 1303). |
-| **1307** | **Programs and code** for the Geothermal AI pipeline (Python/R/shell), not a fourth “site” dataset. |
+| **1303** | Geodatabases for Brady, Desert Peak, and Salton Sea |
+| **1304 / 1305 / 1306** | Per-site repository labels |
+| **1307** | Programs and code for the Geothermal AI pipeline |
 
-Primary paper: Moraga, J., et al., *The Geothermal Artificial Intelligence for geothermal exploration*, *Renewable Energy*, 2022, [doi:10.1016/j.renene.2022.04.113](https://doi.org/10.1016/j.renene.2022.04.113).
+---
 
-## `conda` not recognized in Command Prompt
+## Cloud wrapper (Colab + GitHub + GCS)
 
-Anaconda often does not add `conda` to **PATH** for plain `cmd.exe`. Use the full path:
+Windows GDAL often cannot open the DOE `.gdb` rasters (permission / driver issues). The practical path is:
 
-```bat
-"%USERPROFILE%\anaconda3\Scripts\conda.exe" run -n geothermal-gis python C:\Users\gmalo\GeothermalAI\scripts\inventory_gdbs.py --root "C:\Users\gmalo\GIS Final Project\1303\DOE_GDB" -o C:\Users\gmalo\GeothermalAI\exports\inventory_1303_full.json
+1. Upload site data and SOM stacks to **Google Cloud Storage**
+2. Clone this repo in **Google Colab** (GPU)
+3. Run the 1307 scripts through a notebook that handles auth, paths, deps, and artifact sync
+
+The main runner is [`colab/colab_1307_git_gcs.ipynb`](colab/colab_1307_git_gcs.ipynb). It is an **orchestration wrapper**, not a reimplementation of the model: training code always comes from GitHub (`Git_1307/`); large rasters and tile archives live in GCS.
+
+```text
+┌─────────────────┐     clone / pull      ┌──────────────────┐
+│  GitHub (code)  │ ───────────────────►  │  Colab GPU VM    │
+└─────────────────┘                       │  /content/...    │
+┌─────────────────┐     gsutil rsync      │                  │
+│  GCS (data)     │ ───────────────────►  │  run §7 scripts  │
+│  .gri, .tar.gz  │ ◄───────────────────  │  write run dirs  │
+└─────────────────┘     sync outputs      └──────────────────┘
 ```
 
-Or run **`Anaconda Prompt`** / **"Anaconda PowerShell Prompt"** from the Start menu (conda is on PATH there).  
-To fix PATH permanently: open **Anaconda Prompt**, run `conda init cmd.exe`, restart **cmd**.
+What the notebook automates:
 
-**Shortcut:** from the repo, double‑click or run **`scripts\inventory_1303.cmd`** (uses `%USERPROFILE%\anaconda3\Scripts\conda.exe` automatically).
+| Step | What happens | Artifacts |
+|------|----------------|-----------|
+| Auth + config | GCP project, bucket, Git URL/branch | `run_config.json` per run |
+| Code | `git clone` / `pull` → `/content/GeothermalAI` | `Git_1307/*.py` |
+| Data | `gsutil rsync` of stacks / datasets | `/content/doe-data/...` |
+| Build tiles | `create_doe_dataset.py` | `.npy` tiles; optional `.tar.gz` to GCS |
+| Train / validate | `doe_geoai.py` | `.h5`, metrics JSON, plots, reports |
+| Map (optional) | `doe_ann_map.py` | prediction `.gri` / `.npy` |
+| Persist | copy run folder to GCS | `gs://…/outputs/1307/<run_name>/` |
 
-## Environment (Windows: conda-forge + libmamba)
+Lightweight metrics and plots from those runs are committed here under [`artifacts/1307/`](artifacts/1307/). Models (`.h5`) and full tile archives stay on GCS (~3 GiB of datasets). Details and upload helpers: [`colab/README.md`](colab/README.md).
 
-Avoid mixing pip `gdal` with MSVC. Use a dedicated env:
+**Presentation materials:** [`colab/presentation_1307_slides.md`](colab/presentation_1307_slides.md) and assets in [`colab/presentation_assets/`](colab/presentation_assets/).
+
+---
+
+## Results
+
+Headline settings for the fidelity runs below: **19×19** kernels, **5** feature channels, **100** epochs, **120 000** held-out tiles per validation. Paper Table 2/3 used a **3**-channel description and full-site independent tests; numbers are comparable in spirit, not identical protocols. Raw JSON: [`colab/presentation_assets/cross_site_prediction_metrics.json`](colab/presentation_assets/cross_site_prediction_metrics.json) and per-run files under [`artifacts/1307/`](artifacts/1307/).
+
+### Same-site training (this replication)
+
+| Run | Accuracy | Macro F1 |
+|-----|----------|----------|
+| Brady train `train_brady_19x5d_100ep` | **97.8%** | 97.8% |
+| Desert Peak train `train_desertpeak_19x5d_100ep` | **98.6%** | 98.6% |
+
+Paper Table 2 (same-site, for context): Brady **95.5%**, Desert Peak **92.3%**.
+
+### Cross-site validation vs paper (Table 3)
+
+| Direction | Paper accuracy | This repo (19×5d, 100 ep) | Macro F1 |
+|-----------|----------------|---------------------------|----------|
+| Brady → Desert Peak | **72.4%** | **72.2%** | 70.5% |
+| Desert Peak → Brady | **76.3%** | **72.6%** | 71.4% |
+
+Brady→Desert Peak matches the published headline closely. Desert Peak→Brady is lower accuracy here with a different precision–recall tradeoff (see the detailed table in [`cross_site_prediction_rasters.md`](colab/presentation_assets/cross_site_prediction_rasters.md)).
+
+Full run table: [`artifacts/1307/geoai_run_summary.csv`](artifacts/1307/geoai_run_summary.csv).
+
+### Input stack (Brady)
+
+Multi-band feature stack used before tiling — band layout for the Brady site:
+
+![Brady stack layers](colab/presentation_assets/brady_stack_layers.png)
+
+### Training curves
+
+Brady 19×5d, 100 epochs:
+
+![Brady training plot](artifacts/1307/train_brady_19x5d_100ep/doe_geoai_training_plot.png)
+
+Desert Peak 19×5d, 100 epochs:
+
+![Desert Peak training plot](artifacts/1307/train_desertpeak_19x5d_100ep/doe_geoai_training_plot.png)
+
+### Cross-site confusion matrices (tile validation)
+
+Brady model on Desert Peak tiles (**72.2%**):
+
+![Brady on Desert Peak confusion matrix](artifacts/1307/metrics_brady_on_desertpeak_19x5d_100ep/doe_geoai_training_curves.csv.Non-geothemal.png)
+
+Desert Peak model on Brady tiles (**72.6%**):
+
+![Desert Peak on Brady confusion matrix](artifacts/1307/metrics_desertpeak_on_brady_19x5d_100ep/doe_geoai_training_curves.csv.Non-geothemal.png)
+
+### Spatial prediction maps
+
+Brady-trained model applied across the Desert Peak stack:
+
+![Brady model → Desert Peak prediction](colab/presentation_assets/prediction-raster-figures_brady_model_to_desert_peak.png)
+
+Desert Peak–trained model applied across the Brady stack:
+
+![Desert Peak model → Brady prediction](colab/presentation_assets/prediction-raster-figures_desert_peak_model_to_brady.png)
+
+---
+
+## Repository layout
+
+| Path | Contents |
+|------|----------|
+| [`Git_1307/`](Git_1307/) | Moraga / DOE Geothermal AI scripts (`doe_geoai.py`, `create_doe_dataset.py`, `doe_ann_map.py`, …) |
+| [`colab/`](colab/) | Colab wrappers, GCS helpers, presentation assets |
+| [`artifacts/1307/`](artifacts/1307/) | Committed metrics, `run_config.json`, classification reports, plots |
+| [`scripts/`](scripts/) | Local GDB inventory / GeoTIFF export / GCS upload helpers |
+| [`exports/`](exports/) | Committed GDB inventory snapshots |
+
+---
+
+## Local environment (optional)
+
+For inventory / GeoTIFF export on Windows without Colab, use a conda-forge GDAL env (avoid mixing pip `gdal` with MSVC):
 
 ```powershell
-# Optional: faster solver (once)
-conda install -n base conda-libmamba-solver -y --solver=classic
-
 conda create -n geothermal-gis -c conda-forge python=3.11 gdal fiona rasterio numpy -y --solver=libmamba
 ```
 
-Or run **`scripts/setup_conda_env.ps1`** (same as above).
-
-**Run Python with GDAL via `conda run`** so `GDAL_DATA` / `PROJ_LIB` are correct:
-
-**Where to put data (Windows):** If **Desktop** was moved under OneDrive, treat **`%USERPROFILE%\GIS Final Project`** as the main working copy (e.g. **`C:\Users\gmalo\GIS Final Project\1303\DOE_GDB`**). That avoids the `OneDrive - csulb\Desktop\...` tree.
-
-`scripts/run_1303_pipeline.ps1` uses **`GIS Final Project\1303\DOE_GDB`** under your profile **first**; Desktop is only a fallback.
+Or run [`scripts/setup_conda_env.ps1`](scripts/setup_conda_env.ps1). Point data at a local copy of `1303/DOE_GDB` (prefer a non-OneDrive path such as `%USERPROFILE%\GIS Final Project\1303\DOE_GDB`).
 
 ```powershell
 $GDB = "C:/Users/gmalo/GIS Final Project/1303/DOE_GDB"
@@ -50,35 +172,6 @@ conda run -n geothermal-gis python scripts/inventory_gdbs.py --root $GDB -o expo
 conda run -n geothermal-gis python scripts/export_gdb_rasters_to_geotiff.py --inventory exports/inventory_1303_full.json --out-dir exports/geotiff_1303
 ```
 
-One-shot: **`scripts/run_1303_pipeline.ps1`** (defaults to profile `GIS Final Project` path).
+One-shot: [`scripts/run_1303_pipeline.ps1`](scripts/run_1303_pipeline.ps1). Copy `config/data_sources.example.yaml` → `config/data_sources.yaml` for machine-specific paths (gitignored).
 
-`scripts/bootstrap_gdal_env.py` also sets `GDAL_DATA` / `PROJ_LIB` from `sys.prefix` when you call the scripts with a plain `python.exe` from that env.
-
-### If data lives under OneDrive
-
-Prefer a path like **`C:\Users\gmalo\GIS Final Project`** for GDAL; if you must use a OneDrive folder, use **Always keep on this device** and expect occasional **Permission denied** until data is copied outside sync.
-
-### If raster step says “Permission denied” on `.gdb`
-
-Some external/USB drives or policies block GDAL’s second raster open. Copy the `DOE_GDB` folder to a local disk (e.g. `C:\data\DOE_GDB`) and point `--root` there, then re-run inventory + export.
-
-## Config
-
-Copy `config/data_sources.example.yaml` to `config/data_sources.yaml` and set paths to your SSD. `data_sources.yaml` is gitignored so machine-specific paths stay local.
-
-## Scripts (all Python, no ArcGIS)
-
-- **`scripts/inventory_gdbs.py`** — Every `.gdb`: **vector layers** (schemas, CRS) + **raster subdatasets** when GDAL can open them.
-- **`scripts/export_gdb_rasters_to_geotiff.py`** — Export listed rasters to **GeoTIFF** (+ `export_manifest.json`).
-- **`scripts/inspect_gdb_rasters.py`** — GDAL-only quick peek + band stats.
-
-Committed snapshot of a full vector inventory: **`exports/inventory_1303_full.json`** (raster URIs may be empty if the run hit permission issues on the drive).
-
-## Cloud path (when Windows GDAL says Permission denied)
-
-Upload **`1303/DOE_GDB`** to **Google Cloud Storage**, then run **`colab/colab_gdb_from_gcs.ipynb`** in **Colab** (Linux GDAL). See **`colab/README.md`** and **`scripts/upload_doe_gdb_gsutil.cmd`** (edit bucket + run) or **`scripts/upload_doe_gdb_to_gcs.py`** with `requirements-gcs.txt`.
-
-## Next steps toward Moraga et al.
-
-1. Get **`raster_subdatasets`** populated (local copy of GDB if needed), then export GeoTIFFs and stack bands to match `create_doe_dataset.py` (mask in first channel).
-2. Train / evaluate in Python (Colab or GPU), then sync artifacts to GCS when ready.
+If local GDAL hits **Permission denied** on `.gdb` rasters, upload to GCS and use [`colab/colab_gdb_from_gcs.ipynb`](colab/colab_gdb_from_gcs.ipynb) instead — see [`colab/README.md`](colab/README.md).
