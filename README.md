@@ -2,15 +2,15 @@
 
 **GIS programming final project → cloud pipeline engineering portfolio piece.**
 
-I set out to replicate the Moraga et al. (2022) Geothermal AI workflow on DOE GDR data (Brady, Desert Peak, Salton Sea). Locally, that hit hard limits: multi‑GB geodatabases, Windows GDAL permission failures on `.gdb` rasters, and not enough disk/GPU to tile, train, and map comfortably on a laptop.
+I set out to replicate the Moraga et al. (2022) Geothermal AI workflow on DOE GDR data (Brady, Desert Peak, Salton Sea). The real hangup was **data volume and packaging**: the archives that actually held the model-ready inputs were on the order of **hundreds of gigabytes**. The smaller geodatabases I could keep locally did **not** contain the layers needed to rebuild the feature stacks / rasters the 1307 scripts expect — so “just work from the laptop GDB” was not a viable path.
 
-The project pivoted. Instead of reimplementing the science model, I built a **cloud orchestration wrapper** that stages data from Google Cloud Storage, pulls code from GitHub, runs the original DOE **1307** scripts on a Colab GPU, and syncs reproducible run artifacts back out. Once that path worked, the Moraga replication itself was mostly configuration and evaluation — the engineering product is the wrapper.
+The project pivoted. Instead of reimplementing the science model or trying to host hundreds of GB on a student machine, I built a **cloud orchestration wrapper** that keeps bulky inputs in Google Cloud Storage, pulls code from GitHub, runs the original DOE **1307** scripts on a Colab GPU, and syncs reproducible run artifacts back out. Once that path worked, the Moraga replication itself was mostly configuration and evaluation — the engineering product is the wrapper.
 
 | | |
 |---|---|
 | **Course context** | GIS programming final project |
 | **Original goal** | Replicate Moraga et al. Geothermal AI (train / cross-site validate / map) |
-| **Constraint** | Local storage, GDAL/Windows rasters, and compute |
+| **Constraint** | Hundreds-of-GB source archives; smaller local GDBs lacked the raster inputs |
 | **Deliverable** | Colab + GitHub + GCS pipeline that runs the DOE scripts end-to-end |
 | **Proof** | Cross-site metrics near the paper’s Brady→Desert Peak headline (~72%) |
 
@@ -24,10 +24,10 @@ The main artifact is [`colab/colab_1307_git_gcs.ipynb`](colab/colab_1307_git_gcs
 
 **Design choices employers care about:**
 
-- **Separation of concerns** — code lives in GitHub (`Git_1307/`); bulky rasters and tile archives live in GCS; ephemeral Colab VMs only stage what they need
+- **Separation of concerns** — code lives in GitHub (`Git_1307/`); hundred‑GB source data and derived tile archives live in GCS; ephemeral Colab VMs only stage what a given run needs
 - **Reproducible runs** — each execution writes `run_config.json` (paths, channels, epochs, Git commit, GCS URIs) plus metrics and plots
 - **Vendor scripts unchanged** — wrap `create_doe_dataset.py`, `doe_geoai.py`, and `doe_ann_map.py` rather than forking the science into notebook cells
-- **Failure mode → architecture** — Windows GDAL / disk limits became a deliberate Git-for-code + cloud-for-data layout
+- **Failure mode → architecture** — “the real inputs don’t fit on this machine / aren’t in the small GDB” became a deliberate Git-for-code + cloud-for-data layout
 
 ```text
 ┌─────────────────┐     clone / pull      ┌──────────────────┐
@@ -148,7 +148,7 @@ Desert Peak–trained model on the Brady stack:
 - Wrapping legacy scientific code without rewriting it
 - Git-based delivery of training code into ephemeral environments
 - Cross-site evaluation and comparison to a published baseline
-- Practical debugging of GDAL / geodatabase / Windows filesystem constraints
+- Designing around real geospatial data constraints (hundred‑GB archives, incomplete local subsets)
 
 ---
 
@@ -179,4 +179,4 @@ conda run -n geothermal-gis python scripts/inventory_gdbs.py --root $GDB -o expo
 conda run -n geothermal-gis python scripts/export_gdb_rasters_to_geotiff.py --inventory exports/inventory_1303_full.json --out-dir exports/geotiff_1303
 ```
 
-Prefer a non-OneDrive data path. If `.gdb` rasters hit **Permission denied**, that is exactly the failure mode that motivated the GCS + Colab path — see [`colab/README.md`](colab/README.md) and [`colab/colab_gdb_from_gcs.ipynb`](colab/colab_gdb_from_gcs.ipynb).
+Local inventory/export helped explore what was on disk, but the smaller GDBs alone were not enough to rebuild the Moraga stacks — the large archives and cloud staging were required. See [`colab/README.md`](colab/README.md) and [`colab/colab_1307_git_gcs.ipynb`](colab/colab_1307_git_gcs.ipynb).
