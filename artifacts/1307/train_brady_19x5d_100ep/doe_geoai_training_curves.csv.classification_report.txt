@@ -1,0 +1,15 @@
+Accuracy on test set: 0.977925
+
+Confusion Matrix:
+[[58721  1352]
+ [ 1297 58630]]
+
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98     60073
+           1       0.98      0.98      0.98     59927
+
+    accuracy                           0.98    120000
+   macro avg       0.98      0.98      0.98    120000
+weighted avg       0.98      0.98      0.98    120000

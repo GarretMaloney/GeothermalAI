@@ -1,0 +1,53 @@
+{
+  "accuracy": 0.950325,
+  "batch_size": 32,
+  "classification_report": {
+    "0": {
+      "f1-score": 0.9507335013843548,
+      "precision": 0.9441088605101605,
+      "recall": 0.9574517670167962,
+      "support": 60073.0
+    },
+    "1": {
+      "f1-score": 0.9499096676610227,
+      "precision": 0.956735163681912,
+      "recall": 0.9431808700585712,
+      "support": 59927.0
+    },
+    "accuracy": 0.950325,
+    "macro avg": {
+      "f1-score": 0.9503215845226887,
+      "precision": 0.9504220120960363,
+      "recall": 0.9503163185376837,
+      "support": 120000.0
+    },
+    "weighted avg": {
+      "f1-score": 0.9503220856882038,
+      "precision": 0.95041433109494,
+      "recall": 0.950325,
+      "support": 120000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      57517,
+      2556
+    ],
+    [
+      3405,
+      56522
+    ]
+  ],
+  "dataset_path": "/content/doe-data/brady_samples_19x3d",
+  "image_channels": 3,
+  "kernel_pixels": 19,
+  "model_file": "/content/models/brady/doe_geoai_model.h5",
+  "num_classes": 2,
+  "num_epochs": 25,
+  "predicted_probability_shape": [
+    120000,
+    2
+  ],
+  "test_samples": 120000,
+  "validate_only": true
+}

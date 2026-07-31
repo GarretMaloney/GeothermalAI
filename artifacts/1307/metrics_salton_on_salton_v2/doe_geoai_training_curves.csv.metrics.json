@@ -1,0 +1,53 @@
+{
+  "accuracy": 0.7135,
+  "batch_size": 200,
+  "classification_report": {
+    "0": {
+      "f1-score": 0.6949856275950176,
+      "precision": 0.7440305453716544,
+      "recall": 0.6520067251510662,
+      "support": 60073.0
+    },
+    "1": {
+      "f1-score": 0.7298953521259546,
+      "precision": 0.6896387903261725,
+      "recall": 0.7751430907604252,
+      "support": 59927.0
+    },
+    "accuracy": 0.7135,
+    "macro avg": {
+      "f1-score": 0.7124404898604861,
+      "precision": 0.7168346678489135,
+      "recall": 0.7135749079557456,
+      "support": 120000.0
+    },
+    "weighted avg": {
+      "f1-score": 0.7124192531113964,
+      "precision": 0.7168677561665661,
+      "recall": 0.7135,
+      "support": 120000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      39168,
+      20905
+    ],
+    [
+      13475,
+      46452
+    ]
+  ],
+  "dataset_path": "/content/doe-data/salton_samples_19x3d",
+  "image_channels": 3,
+  "kernel_pixels": 19,
+  "model_file": "/content/1307_runs/create_salton_dataset_v2/doe_geoai_model.h5",
+  "num_classes": 2,
+  "num_epochs": 25,
+  "predicted_probability_shape": [
+    120000,
+    2
+  ],
+  "test_samples": 120000,
+  "validate_only": false
+}

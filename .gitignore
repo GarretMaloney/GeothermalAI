@@ -12,3 +12,10 @@ venv/
 /exports/*
 !/exports/inventory_1303_fiona_vectors.json
 !/exports/inventory_1303_full.json
+
+# Local scratch downloads (canonical copies live in artifacts/1307/)
+.tmp_geo_metrics/
+.tmp_metrics/
+.tmp_salton_inspect/
+.tmp_moraga_extract.txt
+.vscode/

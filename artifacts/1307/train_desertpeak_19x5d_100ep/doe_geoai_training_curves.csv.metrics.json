@@ -1,0 +1,53 @@
+{
+  "accuracy": 0.98595,
+  "batch_size": 32,
+  "classification_report": {
+    "0": {
+      "f1-score": 0.9858990013883545,
+      "precision": 0.9907047887986822,
+      "recall": 0.9811396134702778,
+      "support": 60073.0
+    },
+    "1": {
+      "f1-score": 0.9860006310510321,
+      "precision": 0.9812748938139388,
+      "recall": 0.9907721060623759,
+      "support": 59927.0
+    },
+    "accuracy": 0.98595,
+    "macro avg": {
+      "f1-score": 0.9859498162196934,
+      "precision": 0.9859898413063105,
+      "recall": 0.9859558597663268,
+      "support": 120000.0
+    },
+    "weighted avg": {
+      "f1-score": 0.9859497543949818,
+      "precision": 0.9859955778257596,
+      "recall": 0.98595,
+      "support": 120000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      58940,
+      1133
+    ],
+    [
+      553,
+      59374
+    ]
+  ],
+  "dataset_path": "/content/doe-data/desertpeak_samples_19x5d",
+  "image_channels": 5,
+  "kernel_pixels": 19,
+  "model_file": "/content/1307_runs/train_desertpeak_19x5d_100ep/doe_geoai_model.h5",
+  "num_classes": 2,
+  "num_epochs": 100,
+  "predicted_probability_shape": [
+    120000,
+    2
+  ],
+  "test_samples": 120000,
+  "validate_only": false
+}
